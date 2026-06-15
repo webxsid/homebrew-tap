@@ -22,12 +22,30 @@ class Crona < Formula
       sha256 "bbeea2bb91f815a9dd5fd15a51f5292da21817800268afb5698b35c6d35d4b2f"
     end
   end
-  def install
-    bin.install "crona"
-    bin.install "crona-kernel"
-    bin.install "crona-tui"
-  end
 
+  def install
+    if OS.mac?
+      if Hardware::CPU.arm?
+        bin.install "crona-v1.5.1-darwin-arm64" => "crona"
+        bin.install "crona-kernel-v1.5.1-darwin-arm64" => "crona-kernel"
+        bin.install "crona-tui-v1.5.1-darwin-arm64" => "crona-tui"
+      else
+        bin.install "crona-v1.5.1-darwin-amd64" => "crona"
+        bin.install "crona-kernel-v1.5.1-darwin-amd64" => "crona-kernel"
+        bin.install "crona-tui-v1.5.1-darwin-amd64" => "crona-tui"
+      end
+    elsif OS.linux?
+      if Hardware::CPU.arm?
+        bin.install "crona-v1.5.1-linux-arm64" => "crona"
+        bin.install "crona-kernel-v1.5.1-linux-arm64" => "crona-kernel"
+        bin.install "crona-tui-v1.5.1-linux-arm64" => "crona-tui"
+      else
+        bin.install "crona-v1.5.1-linux-amd64" => "crona"
+        bin.install "crona-kernel-v1.5.1-linux-amd64" => "crona-kernel"
+        bin.install "crona-tui-v1.5.1-linux-amd64" => "crona-tui"
+      end
+    end
+  end
   test do
     system "#{bin}/crona", "--version"
   end
