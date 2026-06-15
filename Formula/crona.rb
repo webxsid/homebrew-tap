@@ -42,12 +42,12 @@ class Crona < Formula
     end
   end
 
-  def write_install_source(source)
+  def write_install_source(source, formula_name)
     runtime_home = crona_runtime_home
     FileUtils.mkdir_p(runtime_home)
     File.write(
       File.join(runtime_home, "install.json"),
-      "{\n  \"installSource\": \"" + source + "\"\n}\n",
+      "{\n  \"installSource\": \"" + source + "\",\n  \"brewFormula\": \"" + formula_name + "\"\n}\n",
     )
   end
 
@@ -76,7 +76,7 @@ class Crona < Formula
   end
 
   def post_install
-    write_install_source("brew")
+    write_install_source("brew", "crona")
   end
   test do
     system "#{bin}/crona", "--version"
