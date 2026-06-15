@@ -75,7 +75,7 @@ class Crona < Formula
     end
   end
 
-  post_install do
+  def post_install
     write_install_source("brew")
   end
   test do
