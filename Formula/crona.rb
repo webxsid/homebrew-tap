@@ -1,3 +1,5 @@
+require "fileutils"
+
 class Crona < Formula
   desc "local-first work tracker for developers"
   homepage "https://crona.work"
@@ -23,6 +25,32 @@ class Crona < Formula
     end
   end
 
+  def crona_runtime_home
+    if ENV["CRONA_HOME"] && !ENV["CRONA_HOME"].strip.empty?
+      return ENV["CRONA_HOME"].strip
+    end
+    home = Dir.home
+    if OS.mac?
+      File.join(home, "Library", "Application Support", "Crona")
+    else
+      data_home = ENV["XDG_DATA_HOME"]
+      if data_home && !data_home.strip.empty?
+        File.join(data_home.strip, "crona")
+      else
+        File.join(home, ".local", "share", "crona")
+      end
+    end
+  end
+
+  def write_install_source(source)
+    runtime_home = crona_runtime_home
+    FileUtils.mkdir_p(runtime_home)
+    File.write(
+      File.join(runtime_home, "install.json"),
+      "{\n  \"installSource\": \"" + source + "\"\n}\n",
+    )
+  end
+
   def install
     if OS.mac?
       if Hardware::CPU.arm?
@@ -45,6 +73,7 @@ class Crona < Formula
         bin.install "crona-tui-v1.5.1-linux-amd64" => "crona-tui"
       end
     end
+    write_install_source("brew")
   end
   test do
     system "#{bin}/crona", "--version"
