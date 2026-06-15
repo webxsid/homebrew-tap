@@ -73,6 +73,9 @@ class Crona < Formula
         bin.install "crona-tui-v1.5.1-linux-amd64" => "crona-tui"
       end
     end
+  end
+
+  post_install do
     write_install_source("brew")
   end
   test do
