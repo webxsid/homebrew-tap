@@ -1,7 +1,7 @@
 require "fileutils"
 
 class Crona < Formula
-  desc "local-first work tracker for developers"
+  desc "Local-first work tracker for developers"
   homepage "https://crona.work"
   version "1.5.1"
 
