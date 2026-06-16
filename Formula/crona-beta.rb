@@ -3,25 +3,25 @@ require "fileutils"
 class CronaBeta < Formula
   desc "local-first work tracker for developers"
   homepage "https://crona.work"
-  version "1.6.0-beta.3"
+  version "1.6.0-beta.4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.3/crona-bundle-1.6.0-beta.3-darwin-arm64.zip"
-      sha256 "6b40d5efd6534459a07455ba4abeec7b0d7dd92a0e27e3d1c2fbbd2801a9ef3a"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.4/crona-bundle-1.6.0-beta.4-darwin-arm64.zip"
+      sha256 "ea1154b8888eaef552f1329ed8fd1a4725a368d319f26a892177bdae32bfa247"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.3/crona-bundle-1.6.0-beta.3-darwin-amd64.zip"
-      sha256 "3e863357d6bef33533313000a4931c7bca5c6be5d3e495f33ead4ae829b5d81f"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.4/crona-bundle-1.6.0-beta.4-darwin-amd64.zip"
+      sha256 "ef9e56dc11ae617ba6cb8a0242fa6d4ad43624673c06b549190801328a433d49"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.3/crona-bundle-1.6.0-beta.3-linux-arm64.zip"
-      sha256 "c17177bf9a6d5a20cd236a42890f45f9676945708ede6a1664de27c5589fa4c3"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.4/crona-bundle-1.6.0-beta.4-linux-arm64.zip"
+      sha256 "ec9f7789cbac7508a6f1cbb33710b98ea0ec76b2bbec44231832cf57ca66fe2d"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.3/crona-bundle-1.6.0-beta.3-linux-amd64.zip"
-      sha256 "f33616aa50b66049f2f7ca2c0f203a418a612c5cc58109beeb21b15afc1c6bec"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.4/crona-bundle-1.6.0-beta.4-linux-amd64.zip"
+      sha256 "db77ac5a5a454a177d4a862e447b0a6a685425b52061b3127a5b402558d71378"
     end
   end
 
@@ -55,21 +55,21 @@ class CronaBeta < Formula
     if OS.mac?
       if Hardware::CPU.arm?
         bin.install "crona"
-        bin.install "crona-kernel"
+        bin.install "crona-daemon"
         bin.install "crona-tui"
       else
         bin.install "crona"
-        bin.install "crona-kernel"
+        bin.install "crona-daemon"
         bin.install "crona-tui"
       end
     elsif OS.linux?
       if Hardware::CPU.arm?
         bin.install "crona"
-        bin.install "crona-kernel"
+        bin.install "crona-daemon"
         bin.install "crona-tui"
       else
         bin.install "crona"
-        bin.install "crona-kernel"
+        bin.install "crona-daemon"
         bin.install "crona-tui"
       end
     end
@@ -80,5 +80,6 @@ class CronaBeta < Formula
   end
   test do
     system "#{bin}/crona", "--version"
+    system "#{bin}/crona-daemon", "--version"
   end
 end
