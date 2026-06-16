@@ -1,27 +1,27 @@
 require "fileutils"
 
 class Crona < Formula
-  desc "Local-first work tracker for developers"
+  desc "local-first work tracker for developers"
   homepage "https://crona.work"
-  version "1.5.1"
+  version "1.6.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.5.1/crona-bundle-v1.5.1-darwin-arm64.zip"
-      sha256 "f6acb8fd91a17dcc6053dd5c08f6d2ee8d3869737103a8fb51610654e84bf8dc"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.0/crona-bundle-1.6.0-darwin-arm64.zip"
+      sha256 "1334e623fcdbbb5632d5714b804e568cdee0a48adc24d3eba7fe63de2d9c5faf"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.5.1/crona-bundle-v1.5.1-darwin-amd64.zip"
-      sha256 "b9c6bf49b01d9075904f4558c84bce49300a81dda913cee73efb7cca4a3895cf"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.0/crona-bundle-1.6.0-darwin-amd64.zip"
+      sha256 "979628dc01ef64eb002e46e120cec9fd89f70f9723eb3eaa4c1bb3bbd8a75dba"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.5.1/crona-bundle-v1.5.1-linux-arm64.zip"
-      sha256 "f70aa7108b773378e2e412ce5190fe22318dd8fa37fbed948a57ba35412fb8ed"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.0/crona-bundle-1.6.0-linux-arm64.zip"
+      sha256 "7f62a5ee1cb57de6e552b8f8acac964547813daf82ef252dbc83420a38c1edbe"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.5.1/crona-bundle-v1.5.1-linux-amd64.zip"
-      sha256 "bbeea2bb91f815a9dd5fd15a51f5292da21817800268afb5698b35c6d35d4b2f"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.0/crona-bundle-1.6.0-linux-amd64.zip"
+      sha256 "0f6a1352a0b2e40ffad56d3270285eec0777c35375b2d3687b25ff1d7c510322"
     end
   end
 
@@ -54,23 +54,23 @@ class Crona < Formula
   def install
     if OS.mac?
       if Hardware::CPU.arm?
-        bin.install "crona-v1.5.1-darwin-arm64" => "crona"
-        bin.install "crona-kernel-v1.5.1-darwin-arm64" => "crona-kernel"
-        bin.install "crona-tui-v1.5.1-darwin-arm64" => "crona-tui"
+        bin.install "crona"
+        bin.install "crona-daemon"
+        bin.install "crona-tui"
       else
-        bin.install "crona-v1.5.1-darwin-amd64" => "crona"
-        bin.install "crona-kernel-v1.5.1-darwin-amd64" => "crona-kernel"
-        bin.install "crona-tui-v1.5.1-darwin-amd64" => "crona-tui"
+        bin.install "crona"
+        bin.install "crona-daemon"
+        bin.install "crona-tui"
       end
     elsif OS.linux?
       if Hardware::CPU.arm?
-        bin.install "crona-v1.5.1-linux-arm64" => "crona"
-        bin.install "crona-kernel-v1.5.1-linux-arm64" => "crona-kernel"
-        bin.install "crona-tui-v1.5.1-linux-arm64" => "crona-tui"
+        bin.install "crona"
+        bin.install "crona-daemon"
+        bin.install "crona-tui"
       else
-        bin.install "crona-v1.5.1-linux-amd64" => "crona"
-        bin.install "crona-kernel-v1.5.1-linux-amd64" => "crona-kernel"
-        bin.install "crona-tui-v1.5.1-linux-amd64" => "crona-tui"
+        bin.install "crona"
+        bin.install "crona-daemon"
+        bin.install "crona-tui"
       end
     end
   end
@@ -80,5 +80,6 @@ class Crona < Formula
   end
   test do
     system "#{bin}/crona", "--version"
+    system "#{bin}/crona-daemon", "--version"
   end
 end
