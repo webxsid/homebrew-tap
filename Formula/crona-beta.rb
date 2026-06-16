@@ -8,20 +8,20 @@ class CronaBeta < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.2/crona-bundle-1.6.0-beta.2-darwin-arm64.zip"
-      sha256 "fb78173b500bc2dd594870f8440dd475fbe4f19bc3f8c7e33253385fc9b47abb"
+      sha256 "7e61a01c0e88ea05c70554da78a425879c3289539dd0b4f4df0b93aa0ce3302a"
     else
       url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.2/crona-bundle-1.6.0-beta.2-darwin-amd64.zip"
-      sha256 "35aa66119fb415ddae52ecdfb0d2eadf39078500c12dbe695873e1f4546e0725"
+      sha256 "cedcfd23eea2abc7f977c8354d542864e0c442575e27ce821a713d963bb6c87a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.2/crona-bundle-1.6.0-beta.2-linux-arm64.zip"
-      sha256 "d2acd7f72cda7318b96e9e66a6153132bc0a9d545eba11ca75e05fe2b1c11531"
+      sha256 "02041fed1e445ace001095cdeb1b38fa0385170283b01b1d87e726dbd32512e7"
     else
       url "https://github.com/webxsid/crona/releases/download/v1.6.0-beta.2/crona-bundle-1.6.0-beta.2-linux-amd64.zip"
-      sha256 "b71931c74efef8d952fc3ec9a5f8035cb23c2352ffffe93f5c07d3c3998d5714"
+      sha256 "d0be94bd05bc0a2dca7421a61d435757d8eca20836b3adbfb531228963ba67c6"
     end
   end
 
