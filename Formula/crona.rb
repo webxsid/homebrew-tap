@@ -3,25 +3,25 @@ require "fileutils"
 class Crona < Formula
   desc "Local-first work tracker for developers"
   homepage "https://crona.work"
-  version "1.6.1"
+  version "1.6.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.6.1/crona-bundle-1.6.1-darwin-arm64.zip"
-      sha256 "eb482a7a256a5db263f87046c3bb63563ed11018d6a42c43397cf7667d1a1157"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.2/crona-bundle-1.6.2-darwin-arm64.zip"
+      sha256 "476f8f241efdbe73b8b648c43cc14dd82948e6a7965003f90b871ab7ac01ff35"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.6.1/crona-bundle-1.6.1-darwin-amd64.zip"
-      sha256 "4a1d46b02f115bf474ad4c3c203de46379fc2c8cc42a8f69b9bf4c8a00269aac"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.2/crona-bundle-1.6.2-darwin-amd64.zip"
+      sha256 "bfe71710c90f02219bf28f1dcee788afe8cbfa3d8a78fadc3c09f51e6a366e5a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.6.1/crona-bundle-1.6.1-linux-arm64.zip"
-      sha256 "595a0e813670431e47d0cc1efe7857b73d3fc4f8fd4fdc4dbbdefb3e6171a215"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.2/crona-bundle-1.6.2-linux-arm64.zip"
+      sha256 "19412dcd9a73daa1c17944e63e4cdcfc8c3fae7ac9d0487b640780cc3ac8b228"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.6.1/crona-bundle-1.6.1-linux-amd64.zip"
-      sha256 "78ae0778dc6ad5a58d101a89c4d37869ff26e5f66f41c16ced49f16f5cf17cb4"
+      url "https://github.com/webxsid/crona/releases/download/v1.6.2/crona-bundle-1.6.2-linux-amd64.zip"
+      sha256 "f329df4e3b4e3fd577e0cf7874766fc8f39469f27de79adede284fb40a16bc3b"
     end
   end
 
@@ -47,7 +47,7 @@ class Crona < Formula
     FileUtils.mkdir_p(runtime_home)
     File.write(
       File.join(runtime_home, "install.json"),
-      "{\n  \"installSource\": \"" + source + "\",\n  \"brewFormula\": \"" + formula_name + "\"\n}\n",
+      "{\n  \"installSource\": \"" + source + "\",\n  \"brewFormula\": \"" + formula_name + "\",\n  \"releaseChannel\": \"stable\"\n}\n",
     )
   end
 
