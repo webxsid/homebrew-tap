@@ -3,25 +3,25 @@ require "fileutils"
 class CronaBeta < Formula
   desc "Local-first work tracker for developers"
   homepage "https://crona.work"
-  version "1.9.0-beta.9"
+  version "1.9.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.9.0-beta.9/crona-bundle-1.9.0-beta.9-darwin-arm64.zip"
-      sha256 "f210fb06000968b85d4c0e30021cd6a52ad938c1605edf29c4f251be47ae9013"
+      url "https://github.com/webxsid/crona/releases/download/v1.9.0/crona-bundle-1.9.0-darwin-arm64.zip"
+      sha256 "c323ef709bb179a907012202f8190af9649c5ad5509dd0b022dd286a385d1b4d"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.9.0-beta.9/crona-bundle-1.9.0-beta.9-darwin-amd64.zip"
-      sha256 "b580f1f5fc42223b0aeb665f1031330bf583af39b00284da801ab52620f0c84a"
+      url "https://github.com/webxsid/crona/releases/download/v1.9.0/crona-bundle-1.9.0-darwin-amd64.zip"
+      sha256 "ddf14f035e28faa78405a9ca26858267473aa3c7f8de8480cd0cc78620768b3a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.9.0-beta.9/crona-bundle-1.9.0-beta.9-linux-arm64.zip"
-      sha256 "8a7c1a58c98440545d13355e5db5498817af880f7fe4628a0f375b818031c20a"
+      url "https://github.com/webxsid/crona/releases/download/v1.9.0/crona-bundle-1.9.0-linux-arm64.zip"
+      sha256 "831ff46587ec27940c72d17c4bdf6f56849e8cce81008c55d5f2cfadeac0bb28"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.9.0-beta.9/crona-bundle-1.9.0-beta.9-linux-amd64.zip"
-      sha256 "67a5f5de2e5942d39f56b842d85ae7b8606dce7edc4d5b19cfddb7eb4a2b9f26"
+      url "https://github.com/webxsid/crona/releases/download/v1.9.0/crona-bundle-1.9.0-linux-amd64.zip"
+      sha256 "2a85a9055c216017663a1c996344c27b8e1fd84649e99c1233122745246daf5e"
     end
   end
 
@@ -47,7 +47,7 @@ class CronaBeta < Formula
     FileUtils.mkdir_p(runtime_home)
     File.write(
       File.join(runtime_home, "install.json"),
-      "{\n  \"installSource\": \"" + source + "\",\n  \"brewFormula\": \"" + formula_name + "\",\n  \"releaseChannel\": \"beta\"\n}\n",
+      "{\n  \"installSource\": \"" + source + "\",\n  \"brewFormula\": \"" + formula_name + "\",\n  \"releaseChannel\": \"stable\"\n}\n",
     )
   end
 

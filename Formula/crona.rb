@@ -3,25 +3,25 @@ require "fileutils"
 class Crona < Formula
   desc "Local-first work tracker for developers"
   homepage "https://crona.work"
-  version "1.8.0"
+  version "1.9.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.8.0/crona-bundle-1.8.0-darwin-arm64.zip"
-      sha256 "5e971997641c5e9d5fd651f7e5708b22602b3b9a56374bc8d09af30bf3128cec"
+      url "https://github.com/webxsid/crona/releases/download/v1.9.0/crona-bundle-1.9.0-darwin-arm64.zip"
+      sha256 "c323ef709bb179a907012202f8190af9649c5ad5509dd0b022dd286a385d1b4d"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.8.0/crona-bundle-1.8.0-darwin-amd64.zip"
-      sha256 "5e2d2cfa79eae224917ad92ecd661a8cda4877697dfc438dc8cd85503ebd5bf5"
+      url "https://github.com/webxsid/crona/releases/download/v1.9.0/crona-bundle-1.9.0-darwin-amd64.zip"
+      sha256 "ddf14f035e28faa78405a9ca26858267473aa3c7f8de8480cd0cc78620768b3a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.8.0/crona-bundle-1.8.0-linux-arm64.zip"
-      sha256 "ab7914e2011bde193f9af1b854f27eb1822091a6182354b0b684e1930b9b92b8"
+      url "https://github.com/webxsid/crona/releases/download/v1.9.0/crona-bundle-1.9.0-linux-arm64.zip"
+      sha256 "831ff46587ec27940c72d17c4bdf6f56849e8cce81008c55d5f2cfadeac0bb28"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.8.0/crona-bundle-1.8.0-linux-amd64.zip"
-      sha256 "cd8f8a66e9c509102ef954ca30d22c5bf9db2ce3256d184c6cb1247f3b87f70c"
+      url "https://github.com/webxsid/crona/releases/download/v1.9.0/crona-bundle-1.9.0-linux-amd64.zip"
+      sha256 "2a85a9055c216017663a1c996344c27b8e1fd84649e99c1233122745246daf5e"
     end
   end
 
