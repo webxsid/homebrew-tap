@@ -3,25 +3,25 @@ require "fileutils"
 class CronaBeta < Formula
   desc "Local-first work tracker for developers"
   homepage "https://crona.work"
-  version "1.10.0-beta.1"
+  version "1.10.0-beta.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.10.0-beta.1/crona-bundle-1.10.0-beta.1-darwin-arm64.zip"
-      sha256 "585efdce1dc983ecea3b7d5e36f4b4f94c59b8c6e4631f5228aa8b85fe78f2bc"
+      url "https://github.com/webxsid/crona/releases/download/v1.10.0-beta.2/crona-bundle-1.10.0-beta.2-darwin-arm64.zip"
+      sha256 "59115e910ed8fa12ad9454e52fc52a71c31398638cac4918433fabf7b79493c2"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.10.0-beta.1/crona-bundle-1.10.0-beta.1-darwin-amd64.zip"
-      sha256 "74ad81a2bb304b59620802d346ceec2084a9222d43061d449d554dc26ec58b06"
+      url "https://github.com/webxsid/crona/releases/download/v1.10.0-beta.2/crona-bundle-1.10.0-beta.2-darwin-amd64.zip"
+      sha256 "32964c1c4afced33daccbf11033258e1baa76ddd107d04311663d88e4b710945"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/webxsid/crona/releases/download/v1.10.0-beta.1/crona-bundle-1.10.0-beta.1-linux-arm64.zip"
-      sha256 "712743101bcf77aca6f8af878909b59fed62aca299b797ff7438dfd20d1d4062"
+      url "https://github.com/webxsid/crona/releases/download/v1.10.0-beta.2/crona-bundle-1.10.0-beta.2-linux-arm64.zip"
+      sha256 "62904d626440e639e11808f6a3682f11316c37d9df7e12d566171c33a4c7e0e7"
     else
-      url "https://github.com/webxsid/crona/releases/download/v1.10.0-beta.1/crona-bundle-1.10.0-beta.1-linux-amd64.zip"
-      sha256 "c106f7dd39e82221710d38535215d75f1f8a46d58407199163d2e3a68ec72f0c"
+      url "https://github.com/webxsid/crona/releases/download/v1.10.0-beta.2/crona-bundle-1.10.0-beta.2-linux-amd64.zip"
+      sha256 "3e88d00afa6a81942d9e4f6cd1c9fbaae5534f5ccb6f38e4ec704c15c0e0a75c"
     end
   end
 
