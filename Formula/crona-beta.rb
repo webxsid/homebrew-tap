@@ -3,25 +3,25 @@ require "fileutils"
 class CronaBeta < Formula
   desc "Local-first work tracker for developers"
   homepage "https://crona.work"
-  version "1.10.0-beta.7"
+  version "1.10.0-beta.8"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/crona-app/crona/releases/download/v1.10.0-beta.7/crona-bundle-1.10.0-beta.7-darwin-arm64.zip"
-      sha256 "bdec70657351c5d6d5922c3293e21b049f01aae7f22d7d7a31a25e99f11c467a"
+      url "https://github.com/crona-app/crona/releases/download/v1.10.0-beta.8/crona-bundle-1.10.0-beta.8-darwin-arm64.zip"
+      sha256 "f014061c31fd8c53dd98eee267a6f964f99825f2d17eaf464c7b1e39ff9e16d9"
     else
-      url "https://github.com/crona-app/crona/releases/download/v1.10.0-beta.7/crona-bundle-1.10.0-beta.7-darwin-amd64.zip"
-      sha256 "77824b494647633f164d1adba9ab0f01f08ac6cdea295c487fd843311cc1e908"
+      url "https://github.com/crona-app/crona/releases/download/v1.10.0-beta.8/crona-bundle-1.10.0-beta.8-darwin-amd64.zip"
+      sha256 "e76712a0530f27e995a61751cf74589b66442bc1b03e3856c7f49b696db1fb0d"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/crona-app/crona/releases/download/v1.10.0-beta.7/crona-bundle-1.10.0-beta.7-linux-arm64.zip"
-      sha256 "fe0b8cc9287205bf52cd8965e219318561968544833ba6b4799846dae5476734"
+      url "https://github.com/crona-app/crona/releases/download/v1.10.0-beta.8/crona-bundle-1.10.0-beta.8-linux-arm64.zip"
+      sha256 "a25492cb363330ed38d69c18870028e47da7c3746c92c67f5816d07e50d2c6eb"
     else
-      url "https://github.com/crona-app/crona/releases/download/v1.10.0-beta.7/crona-bundle-1.10.0-beta.7-linux-amd64.zip"
-      sha256 "20ff9acc05e56b4c66a13144da391c7a22f0d37c2d2c2d57d7fd587503feb4bf"
+      url "https://github.com/crona-app/crona/releases/download/v1.10.0-beta.8/crona-bundle-1.10.0-beta.8-linux-amd64.zip"
+      sha256 "70344a2c4f6bb47d622fac02325897bc4f2162eda2686f62382145b46ff0573f"
     end
   end
 
